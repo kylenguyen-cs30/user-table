@@ -8,7 +8,7 @@ echo "Creating a new user..."
 http POST localhost:3001/users fName="Jack" lName="Sparrow" email="jack.sparrow@example.com" phoneNum="1234567890"
 
 echo "Creating a new user..."
-http POST localhost:3001/users fName="Captain" lName="Hook" email="captain.hookcaptainmple.com" phoneNum="1234567890"
+http POST localhost:3001/users fName="Captain" lName="Hook" email="captain.hookcaptai@example.com" phoneNum="1234567890"
 
 
 
