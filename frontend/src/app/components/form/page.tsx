@@ -31,7 +31,7 @@ const Form: React.FC = () => {
 
     // api endpoint POST REQUEST
     try {
-      const response = await fetch("http://localhost:3001/users", {
+      const response = await fetch("http://192.168.5.20:3001/users", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
