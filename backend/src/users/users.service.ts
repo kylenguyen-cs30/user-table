@@ -14,6 +14,20 @@ export class UserService {
     return this.userRepository.find();
   }
 
-  // Addition methods for CRUD operations
-  //
+  findOne(id: string): Promise<User> {
+    return this.userRepository.findOneBy({ id: parseInt(id, 10) });
+  }
+
+  async create(user: User): Promise<User> {
+    return this.userRepository.save(user);
+  }
+
+  async update(id: string, user: User): Promise<User> {
+    await this.userRepository.update(parseInt(id, 10), user);
+    return this.userRepository.findOneBy({ id: parseInt(id, 10) });
+  }
+
+  async remove(id: string): Promise<void> {
+    await this.userRepository.delete(id);
+  }
 }
