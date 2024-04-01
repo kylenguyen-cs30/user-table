@@ -28,6 +28,6 @@ export class UserService {
   }
 
   async remove(id: string): Promise<void> {
-    await this.userRepository.delete(id);
+    await this.userRepository.delete(parseInt(id, 10));
   }
 }
