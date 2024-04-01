@@ -1,113 +1,24 @@
-./api_test.sh
-Creating a new user...
-HTTP/1.1 201 Created
-Connection: keep-alive
-Content-Length: 92
-Content-Type: application/json; charset=utf-8
-Date: Mon, 01 Apr 2024 02:42:46 GMT
-ETag: W/"5c-Fbnxox1Z/BdwEruVMKOIa+uZbW0"
-Keep-Alive: timeout=5
-X-Powered-By: Express
-
-{
-    "email": "john.doe@example.com",
-    "fName": "John",
-    "id": 1,
-    "lName": "Doe",
-    "phoneNum": "1234567890"
-}
-
-
-Retrieving all users...
-HTTP/1.1 200 OK
-Connection: keep-alive
-Content-Length: 94
-Content-Type: application/json; charset=utf-8
-Date: Mon, 01 Apr 2024 02:42:47 GMT
-ETag: W/"5e-FtQCIX50EfVsWyn5OwtanelDycw"
-Keep-Alive: timeout=5
-X-Powered-By: Express
-
-[
-    {
-        "email": "john.doe@example.com",
-        "fName": "John",
-        "id": 1,
-        "lName": "Doe",
-        "phoneNum": "1234567890"
-    }
-]
-
-
-Retrieving a single user by ID...
-HTTP/1.1 500 Internal Server Error
-Connection: keep-alive
-Content-Length: 52
-Content-Type: application/json; charset=utf-8
-Date: Mon, 01 Apr 2024 02:42:47 GMT
-ETag: W/"34-rlKccw1E+/fV8niQk4oFitDfPro"
-Keep-Alive: timeout=5
-X-Powered-By: Express
-
-{
-    "message": "Internal server error",
-    "statusCode": 500
-}
-
-
-Updating a user...
-HTTP/1.1 404 Not Found
-Connection: keep-alive
-Content-Length: 72
-Content-Type: application/json; charset=utf-8
-Date: Mon, 01 Apr 2024 02:42:47 GMT
-ETag: W/"48-/nPdhJTzdNKWecbNwRq+Wewjj9c"
-Keep-Alive: timeout=5
-X-Powered-By: Express
-
-{
-    "error": "Not Found",
-    "message": "Cannot PUT /users/:id",
-    "statusCode": 404
-}
-
-
-Deleting a user...
-HTTP/1.1 500 Internal Server Error
-Connection: keep-alive
-Content-Length: 52
-Content-Type: application/json; charset=utf-8
-Date: Mon, 01 Apr 2024 02:42:47 GMT
-ETag: W/"34-rlKccw1E+/fV8niQk4oFitDfPro"
-Keep-Alive: timeout=5
-X-Powered-By: Express
-
-{
-    "message": "Internal server error",
-    "statusCode": 500
-}
-
 pnpm run start:dev
-[7:30:09 PM] Starting compilation in watch mode...
+[8:02:09 PM] Starting compilation in watch mode...
 
-[7:30:10 PM] Found 0 errors. Watching for file changes.
+[8:02:10 PM] Found 0 errors. Watching for file changes.
 
-[Nest] 30050  - 03/31/2024, 7:30:10 PM     LOG [NestFactory] Starting Nest application...
-[Nest] 30050  - 03/31/2024, 7:30:10 PM     LOG [InstanceLoader] TypeOrmModule dependencies initialized +29ms
-[Nest] 30050  - 03/31/2024, 7:30:10 PM     LOG [InstanceLoader] AppModule dependencies initialized +0ms
-[Nest] 30050  - 03/31/2024, 7:30:10 PM     LOG [InstanceLoader] TypeOrmCoreModule dependencies initialized +20ms
-[Nest] 30050  - 03/31/2024, 7:30:10 PM     LOG [InstanceLoader] TypeOrmModule dependencies initialized +0ms
-[Nest] 30050  - 03/31/2024, 7:30:10 PM     LOG [InstanceLoader] UsersModule dependencies initialized +0ms
-[Nest] 30050  - 03/31/2024, 7:30:10 PM     LOG [RoutesResolver] AppController {/}: +5ms
-[Nest] 30050  - 03/31/2024, 7:30:10 PM     LOG [RouterExplorer] Mapped {/, GET} route +1ms
-[Nest] 30050  - 03/31/2024, 7:30:10 PM     LOG [RoutesResolver] UserController {/users}: +0ms
-[Nest] 30050  - 03/31/2024, 7:30:10 PM     LOG [RouterExplorer] Mapped {/users, GET} route +0ms
-[Nest] 30050  - 03/31/2024, 7:30:10 PM     LOG [RouterExplorer] Mapped {/users/:id, GET} route +1ms
-[Nest] 30050  - 03/31/2024, 7:30:10 PM     LOG [RouterExplorer] Mapped {/users, POST} route +0ms
-[Nest] 30050  - 03/31/2024, 7:30:10 PM     LOG [RouterExplorer] Mapped {/users, PUT} route +0ms
-[Nest] 30050  - 03/31/2024, 7:30:10 PM     LOG [RouterExplorer] Mapped {/users/:id, DELETE} route +0ms
-[Nest] 30050  - 03/31/2024, 7:30:10 PM     LOG [NestApplication] Nest application successfully started +1ms
-[Nest] 30050  - 03/31/2024, 7:42:47 PM   ERROR [ExceptionsHandler] Unknown column 'NaN' in 'where clause'
+[Nest] 34865  - 03/31/2024, 8:02:10 PM     LOG [NestFactory] Starting Nest application...
+[Nest] 34865  - 03/31/2024, 8:02:10 PM     LOG [InstanceLoader] TypeOrmModule dependencies initialized +30ms
+[Nest] 34865  - 03/31/2024, 8:02:10 PM     LOG [InstanceLoader] AppModule dependencies initialized +0ms
+[Nest] 34865  - 03/31/2024, 8:02:10 PM     LOG [InstanceLoader] TypeOrmCoreModule dependencies initialized +20ms
+[Nest] 34865  - 03/31/2024, 8:02:10 PM     LOG [InstanceLoader] TypeOrmModule dependencies initialized +0ms
+[Nest] 34865  - 03/31/2024, 8:02:10 PM     LOG [InstanceLoader] UsersModule dependencies initialized +0ms
+[Nest] 34865  - 03/31/2024, 8:02:10 PM     LOG [RoutesResolver] AppController {/}: +5ms
+[Nest] 34865  - 03/31/2024, 8:02:10 PM     LOG [RouterExplorer] Mapped {/, GET} route +1ms
+[Nest] 34865  - 03/31/2024, 8:02:10 PM     LOG [RoutesResolver] UserController {/users}: +0ms
+[Nest] 34865  - 03/31/2024, 8:02:10 PM     LOG [RouterExplorer] Mapped {/users, GET} route +0ms
+[Nest] 34865  - 03/31/2024, 8:02:10 PM     LOG [RouterExplorer] Mapped {/users/:id, GET} route +1ms
+[Nest] 34865  - 03/31/2024, 8:02:10 PM     LOG [RouterExplorer] Mapped {/users, POST} route +0ms
+[Nest] 34865  - 03/31/2024, 8:02:10 PM     LOG [RouterExplorer] Mapped {/users/:id, PUT} route +0ms
+[Nest] 34865  - 03/31/2024, 8:02:10 PM     LOG [RouterExplorer] Mapped {/users/:id, DELETE} route +0ms
+[Nest] 34865  - 03/31/2024, 8:02:10 PM     LOG [NestApplication] Nest application successfully started +1ms
+[Nest] 34865  - 03/31/2024, 8:02:57 PM   ERROR [ExceptionsHandler] Unknown column 'NaN' in 'where clause'
 QueryFailedError: Unknown column 'NaN' in 'where clause'
     at Query.onResult (/home/pandasama/Developer/web/user-table/backend/node_modules/.pnpm/typeorm@0.3.20_mysql2@3.9.3_ts-node@10.9.2/src/driver/mysql/MysqlQueryRunner.ts:246:33)
     at Query.execute (/home/pandasama/Developer/web/user-table/backend/node_modules/.pnpm/mysql2@3.9.3/node_modules/mysql2/lib/commands/command.js:36:14)
@@ -119,8 +30,8 @@ QueryFailedError: Unknown column 'NaN' in 'where clause'
     at addChunk (node:internal/streams/readable:559:12)
     at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
     at Socket.Readable.push (node:internal/streams/readable:390:5)
-[Nest] 30050  - 03/31/2024, 7:42:47 PM   ERROR [ExceptionsHandler] Truncated incorrect DOUBLE value: ':id'
-QueryFailedError: Truncated incorrect DOUBLE value: ':id'
+[Nest] 34865  - 03/31/2024, 8:02:57 PM   ERROR [ExceptionsHandler] Unknown column 'NaN' in 'where clause'
+QueryFailedError: Unknown column 'NaN' in 'where clause'
     at Query.onResult (/home/pandasama/Developer/web/user-table/backend/node_modules/.pnpm/typeorm@0.3.20_mysql2@3.9.3_ts-node@10.9.2/src/driver/mysql/MysqlQueryRunner.ts:246:33)
     at Query.execute (/home/pandasama/Developer/web/user-table/backend/node_modules/.pnpm/mysql2@3.9.3/node_modules/mysql2/lib/commands/command.js:36:14)
     at PoolConnection.handlePacket (/home/pandasama/Developer/web/user-table/backend/node_modules/.pnpm/mysql2@3.9.3/node_modules/mysql2/lib/connection.js:481:34)
@@ -131,4 +42,115 @@ QueryFailedError: Truncated incorrect DOUBLE value: ':id'
     at addChunk (node:internal/streams/readable:559:12)
     at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
     at Socket.Readable.push (node:internal/streams/readable:390:5)
+[Nest] 34865  - 03/31/2024, 8:02:57 PM   ERROR [ExceptionsHandler] Unknown column 'NaN' in 'where clause'
+QueryFailedError: Unknown column 'NaN' in 'where clause'
+    at Query.onResult (/home/pandasama/Developer/web/user-table/backend/node_modules/.pnpm/typeorm@0.3.20_mysql2@3.9.3_ts-node@10.9.2/src/driver/mysql/MysqlQueryRunner.ts:246:33)
+    at Query.execute (/home/pandasama/Developer/web/user-table/backend/node_modules/.pnpm/mysql2@3.9.3/node_modules/mysql2/lib/commands/command.js:36:14)
+    at PoolConnection.handlePacket (/home/pandasama/Developer/web/user-table/backend/node_modules/.pnpm/mysql2@3.9.3/node_modules/mysql2/lib/connection.js:481:34)
+    at PacketParser.onPacket (/home/pandasama/Developer/web/user-table/backend/node_modules/.pnpm/mysql2@3.9.3/node_modules/mysql2/lib/connection.js:97:12)
+    at PacketParser.executeStart (/home/pandasama/Developer/web/user-table/backend/node_modules/.pnpm/mysql2@3.9.3/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/home/pandasama/Developer/web/user-table/backend/node_modules/.pnpm/mysql2@3.9.3/node_modules/mysql2/lib/connection.js:104:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Socket.Readable.push (node:internal/streams/readable:390:5)
+
+
+
+
+./api_test.sh
+Creating a new user...
+HTTP/1.1 201 Created
+Connection: keep-alive
+Content-Length: 92
+Content-Type: application/json; charset=utf-8
+Date: Mon, 01 Apr 2024 03:02:57 GMT
+ETag: W/"5c-kx6lvNTjM9rxJcYo7g4WZ3TntZU"
+Keep-Alive: timeout=5
+X-Powered-By: Express
+
+{
+    "email": "john.doe@example.com",
+    "fName": "John",
+    "id": 2,
+    "lName": "Doe",
+    "phoneNum": "1234567890"
+}
+
+
+Retrieving all users...
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 187
+Content-Type: application/json; charset=utf-8
+Date: Mon, 01 Apr 2024 03:02:57 GMT
+ETag: W/"bb-hO8NKkFsYfMKd8jOvIVgjkgOXLQ"
+Keep-Alive: timeout=5
+X-Powered-By: Express
+
+[
+    {
+        "email": "john.doe@example.com",
+        "fName": "John",
+        "id": 1,
+        "lName": "Doe",
+        "phoneNum": "1234567890"
+    },
+    {
+        "email": "john.doe@example.com",
+        "fName": "John",
+        "id": 2,
+        "lName": "Doe",
+        "phoneNum": "1234567890"
+    }
+]
+
+
+Retrieving a single user by ID...
+HTTP/1.1 500 Internal Server Error
+Connection: keep-alive
+Content-Length: 52
+Content-Type: application/json; charset=utf-8
+Date: Mon, 01 Apr 2024 03:02:57 GMT
+ETag: W/"34-rlKccw1E+/fV8niQk4oFitDfPro"
+Keep-Alive: timeout=5
+X-Powered-By: Express
+
+{
+    "message": "Internal server error",
+    "statusCode": 500
+}
+
+
+Updating a user...
+HTTP/1.1 500 Internal Server Error
+Connection: keep-alive
+Content-Length: 52
+Content-Type: application/json; charset=utf-8
+Date: Mon, 01 Apr 2024 03:02:57 GMT
+ETag: W/"34-rlKccw1E+/fV8niQk4oFitDfPro"
+Keep-Alive: timeout=5
+X-Powered-By: Express
+
+{
+    "message": "Internal server error",
+    "statusCode": 500
+}
+
+
+Deleting a user...
+HTTP/1.1 500 Internal Server Error
+Connection: keep-alive
+Content-Length: 52
+Content-Type: application/json; charset=utf-8
+Date: Mon, 01 Apr 2024 03:02:57 GMT
+ETag: W/"34-rlKccw1E+/fV8niQk4oFitDfPro"
+Keep-Alive: timeout=5
+X-Powered-By: Express
+
+{
+    "message": "Internal server error",
+    "statusCode": 500
+}
+
 
