@@ -1,19 +1,20 @@
+import { constants } from "crypto";
 import React, { useState } from "react";
 //import { useFormState } from "react-dom";
 
 interface FormData {
-  firstName: string;
-  lastName: string;
+  fName: string;
+  lName: string;
   email: string;
-  phoneNumber: string;
+  phoneNum: string;
 }
 
 const Form: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
-    firstName: "",
-    lastName: "",
+    fName: "",
+    lName: "",
     email: "",
-    phoneNumber: "",
+    phoneNum: "",
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -25,10 +26,28 @@ const Form: React.FC = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    console.log("FormData submitted", formData);
+    // api endpoint POST REQUEST
+    try {
+      const response = await fetch("http://localhost:3001/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log("User create succfully", data);
+      } else {
+        console.error("Failed to create user", response);
+      }
+    } catch (error) {
+      console.error("Error submitting form", error);
+    }
   };
 
   return (
@@ -37,21 +56,21 @@ const Form: React.FC = () => {
       className="flex flex-col justify-items-center justify-center"
     >
       <div>
-        <label htmlFor="firstName">First Name</label>
+        <label htmlFor="fName">First Name</label>
         <input
           type="text"
-          id="firstName"
-          value={formData.firstName}
+          id="fName"
+          value={formData.fName}
           onChange={handleChange}
           required
         />
       </div>
       <div>
-        <label htmlFor="lastName">Last Name</label>
+        <label htmlFor="lName">Last Name</label>
         <input
           type="text"
-          id="lastName"
-          value={formData.lastName}
+          id="lName"
+          value={formData.lName}
           onChange={handleChange}
           required
         />
@@ -67,11 +86,11 @@ const Form: React.FC = () => {
         />
       </div>
       <div>
-        <label htmlFor="phoneNumber">Phone Number</label>
+        <label htmlFor="phoneNum">Phone Number</label>
         <input
           type="text"
-          id="phoneNumber"
-          value={formData.phoneNumber}
+          id="phoneNum"
+          value={formData.phoneNum}
           onChange={handleChange}
           required
         />
